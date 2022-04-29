@@ -1,0 +1,40 @@
+{%extends '/layouts/main_tmpl.html' %}
+
+{%block content %}
+<div class="p-5 bg-primary text-white text-center">
+  <h1>Mezzo Forte</h1>
+  <p>An online Art Gallery of Urban art</p> 
+</div> 
+  
+  {%include '/partials/_sidebar.html'%}
+  <div class="col-md-8 mt-4">
+    {%include '/partials/_flash_messages.html'%}
+    <h1 class="text-primary">Web Application API</h1>
+    <p class="lead mb-4">This is an API for web applications to manage their users and items</p>
+    
+    <div class="row">
+      <div class="dropdown col-md-3 mb-4">
+        <button type="button" class="btn btn-primary dropdown-toggle btn-lg" data-bs-toggle="dropdown">
+          Category
+        </button>
+        <ul class="dropdown-menu">
+          {%for cat in categories%}
+            <li><a class="dropdown-item" href="?category={{cat.id}}">{{cat.category}}</a></li>
+          {%endfor %}
+        </ul>
+      </div>
+      <div class="col-md-9 mb-4 "><h4 class="bg-primary text-white p-2 rounded">{{category.category}}</h4></div>
+    </div>     
+    <!-- <hr> 
+    <h3 class="mb-4 mt-4 "> You are in the category <span class="text-secondary">{{category.category}}</span></h3> -->
+    <div class="row">
+        {%for item in items%}
+        <div class="col-sm-4 ">
+          <h4>{{item.name}}</h4>
+          <div class="fakeimg">Fake Image</div>
+          <p class="d-flex justify-content-end"><b>price:</b>&nbsp;<span class="">&euro; {{item.price}}</span></p>
+        </div>  
+        {%endfor%}
+    </div>
+  </div>
+{%endblock content %}

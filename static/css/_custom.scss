@@ -1,0 +1,18 @@
+$primary:       #1b3d70;
+$secondary:     #aaaaaa;
+$success:       #5f942e;
+$info:          #f3f9fd ;
+
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info
+);
+
+$border-radius:.50rem ;
+$font-size-base:1rem;
+$h1-font-size: $font-size-base * 3;
+ 
+@import "../../bootstrap/bootstrap.scss";
